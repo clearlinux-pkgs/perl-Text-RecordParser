@@ -1,0 +1,10 @@
+1.6.5
+perl(Class::Accessor)
+perl(Exporter::Tiny)
+perl(IO::Scalar)
+perl(List::MoreUtils)
+perl(Module::Install)
+perl(Readonly)
+perl(Sub::Uplevel)
+perl(Test::Exception)
+perl(Text::Autoformat)
