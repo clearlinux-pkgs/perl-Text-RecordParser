@@ -4,7 +4,7 @@
 #
 Name     : perl-Text-RecordParser
 Version  : 1.6.5
-Release  : 1
+Release  : 2
 URL      : https://cpan.metacpan.org/authors/id/K/KC/KCLARK/Text-RecordParser-1.6.5.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/K/KC/KCLARK/Text-RecordParser-1.6.5.tar.gz
 Summary  : read record-oriented files
