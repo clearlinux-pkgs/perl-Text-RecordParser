@@ -4,14 +4,15 @@
 #
 Name     : perl-Text-RecordParser
 Version  : 1.6.5
-Release  : 2
+Release  : 3
 URL      : https://cpan.metacpan.org/authors/id/K/KC/KCLARK/Text-RecordParser-1.6.5.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/K/KC/KCLARK/Text-RecordParser-1.6.5.tar.gz
-Summary  : read record-oriented files
+Summary  : 'Parse record-oriented data in a text file'
 Group    : Development/Tools
 License  : GPL-2.0
 Requires: perl-Text-RecordParser-bin = %{version}-%{release}
 Requires: perl-Text-RecordParser-man = %{version}-%{release}
+Requires: perl-Text-RecordParser-perl = %{version}-%{release}
 BuildRequires : buildreq-cpan
 BuildRequires : perl(Class::Accessor)
 BuildRequires : perl(Exporter::Tiny)
@@ -43,7 +44,6 @@ Group: Development
 Requires: perl-Text-RecordParser-bin = %{version}-%{release}
 Provides: perl-Text-RecordParser-devel = %{version}-%{release}
 Requires: perl-Text-RecordParser = %{version}-%{release}
-Requires: perl-Text-RecordParser = %{version}-%{release}
 
 %description dev
 dev components for the perl-Text-RecordParser package.
@@ -57,8 +57,18 @@ Group: Default
 man components for the perl-Text-RecordParser package.
 
 
+%package perl
+Summary: perl components for the perl-Text-RecordParser package.
+Group: Default
+Requires: perl-Text-RecordParser = %{version}-%{release}
+
+%description perl
+perl components for the perl-Text-RecordParser package.
+
+
 %prep
 %setup -q -n Text-RecordParser-1.6.5
+cd %{_builddir}/Text-RecordParser-1.6.5
 
 %build
 export http_proxy=http://127.0.0.1:9/
@@ -94,9 +104,6 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.28.2/Text/RecordParser.pm
-/usr/lib/perl5/vendor_perl/5.28.2/Text/RecordParser/Object.pm
-/usr/lib/perl5/vendor_perl/5.28.2/Text/RecordParser/Tab.pm
 
 %files bin
 %defattr(-,root,root,-)
@@ -115,3 +122,9 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 /usr/share/man/man1/tab2graph.1
 /usr/share/man/man1/tablify.1
 /usr/share/man/man1/tabmerge.1
+
+%files perl
+%defattr(-,root,root,-)
+/usr/lib/perl5/vendor_perl/5.30.1/Text/RecordParser.pm
+/usr/lib/perl5/vendor_perl/5.30.1/Text/RecordParser/Object.pm
+/usr/lib/perl5/vendor_perl/5.30.1/Text/RecordParser/Tab.pm
