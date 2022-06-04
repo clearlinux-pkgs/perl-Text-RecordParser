@@ -4,7 +4,7 @@
 #
 Name     : perl-Text-RecordParser
 Version  : 1.6.5
-Release  : 7
+Release  : 8
 URL      : https://cpan.metacpan.org/authors/id/K/KC/KCLARK/Text-RecordParser-1.6.5.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/K/KC/KCLARK/Text-RecordParser-1.6.5.tar.gz
 Summary  : 'Parse record-oriented data in a text file'
@@ -125,6 +125,4 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files perl
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.34.0/Text/RecordParser.pm
-/usr/lib/perl5/vendor_perl/5.34.0/Text/RecordParser/Object.pm
-/usr/lib/perl5/vendor_perl/5.34.0/Text/RecordParser/Tab.pm
+/usr/lib/perl5/*
